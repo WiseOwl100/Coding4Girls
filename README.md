@@ -21,17 +21,14 @@ ________________________________________
 Step 2: Use the Code
 1.	Open the p5.js editor https://editor.p5js.org/
 2.	Click on the ‘Arrow’ button
-
- 
-
-
 3.	Select ‘Index.html’ and delete the code
 4.	Open the provided HTML file (studentCode.html)
 5.	Replace the code in index.html with studentCode.html
 6.	Replace this line in the code:
-
+let modelURL = "PASTE_YOUR_MODEL_URL_HERE";
  
 with your own model URL from Teachable Machine.
+
 3.	Save the file and open it in a browser.
 4.	Allow webcam access.
 5.	Try your happy and sad faces — you should see the emoji change!
@@ -60,7 +57,7 @@ else if (label === "Neutral") emoji = "😐";
 
 You can view and copy the HTML code used in this project:
 
-1. Click on the `index.html` file in this repository.
+1. Click on the `studentCode.html` file in this repository.
 2. Click the **"Raw"** button to view the full code.
 3. Right-click and choose **"Select All"** > **"Copy"**.
 4. Paste it into your own code editor 
@@ -78,12 +75,6 @@ To follow along with the full instructions, download the Word document:
 - How to train a model using Teachable Machine
 - How to use ml5.js and p5.js to classify webcam input
 - How to display emojis based on facial expressions
----
-
-## 🧠 Bonus Challenge
-
-Try adding a third expression like "Neutral" and update the code to show a new emoji!
-
 ---
 
 Happy coding! 😄
