@@ -9,7 +9,7 @@ In this project, you'll learn how to train a computer to recognize your facial e
 
 To follow along with the full instructions, download the Word document:
 
-👉 Click here to download the workshop guide
+👉 Click on 3 dots to download the worksheet
 
 ---
 
