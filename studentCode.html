@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emotion Emoji with p5.js + ml5.js</title>
+  <!-- Load p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <!-- Load ml5.js -->
+  <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+</head>
+<body>
+  <script>
+    let modelURL = "PASTE_YOUR_MODEL_URL_HERE"; // Replace with your model URL
+    let classifier;
+    let video;
+    let label = "Waiting...";
+    let emoji = "🤖";
+
+    function preload() {
+      classifier = ml5.imageClassifier(modelURL + "model.json");
+    }
+
+    function setup() {
+      createCanvas(400, 300);
+      video = createCapture(VIDEO);
+      video.hide();
+      classifyVideo();
+    }
+
+    function draw() {
+      background(220);
+      image(video, 0, 0, width, height);
+      
+      textSize(32);
+      textAlign(CENTER, CENTER);
+      text(label, width / 2, height - 40);
+      textSize(64);
+      text(emoji, width / 2, 40);
+    }
+
+    function classifyVideo() {
+      classifier.classify(video, gotResult);
+    }
+
+    function gotResult(error, results) {
+      if (error) {
+        console.error(error);
+        return;
+      }
+      label = results[0].label;
+
+      // Map emotion labels to emojis
+      if (label === "Happy") emoji = "😄";
+      else if (label === "Sad") emoji = "😢";
+      else emoji = "🤖";
+
+      classifyVideo();
+    }
+  </script>
+</body>
+</html>
